@@ -26,7 +26,7 @@ module Dry
 
     def self.Form(base = nil, **options, &block)
       klass = base ? Schema::Form.configure(Class.new(base)) : Schema::Form
-      Validation.Schema(klass, options, &block)
+      Validation.Schema(klass, **options, &block)
     end
 
     def self.JSON(base = Schema::JSON, **options, &block)
